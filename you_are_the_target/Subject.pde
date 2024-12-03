@@ -11,7 +11,6 @@ class Subject {
  }
   
  void update (){
-  
    pos.add(spd);
    
    
@@ -25,10 +24,5 @@ class Subject {
    
  }
  
- 
-  
-  
-  
-  
-  
+
 }

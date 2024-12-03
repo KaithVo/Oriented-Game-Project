@@ -1,11 +1,11 @@
-
-color targetColor;
-color movingSubject;
+Character player; //player
 int points=0; 
+
 Subject[] sub;
 
 void setup(){
  size(600,400);
+ player = new Character (); 
  sub = new Subject [10];
 }
 
