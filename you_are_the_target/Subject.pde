@@ -1,25 +1,21 @@
 class Subject {
  PVector pos;
  PVector spd;
- color col;
+float size=30;
  
- Subject (float xPos, float yPos, PVector speed) {
-  pos= new PVector (xPos, yPos);
-  spd= speed;
-  col= color(random (255)) ; 
-   
+ Subject () {
+  pos = new PVector(random(width), random(height)); // Start randomly in the world
+  spd= new PVector(0,0) ;
  }
   
  void update (){
    pos.add(spd);
-   
-   
  }
  
  void display () {
-   fill (col);
+   fill (0);
    noStroke ();
-   ellipse (pos.x, pos.y, 30,30);
+   ellipse (pos.x, pos.y, size,size);
    
    
  }

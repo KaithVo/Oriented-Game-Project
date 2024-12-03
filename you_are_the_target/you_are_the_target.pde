@@ -17,8 +17,6 @@ void draw(){
     player.update();
     player.display();
 
-
-
   fill(0);
     textSize(20);
     text("Score: " + points, 50, 30);

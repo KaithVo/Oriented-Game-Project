@@ -2,8 +2,8 @@ class Character {
  PVector CHARposition;
  PVector offset;
  PVector velocity;
- float speed;
- float size;
+ float speed= 4;
+ float size=40;
  
  Character() {
   CHARposition = new PVector (0,0);
