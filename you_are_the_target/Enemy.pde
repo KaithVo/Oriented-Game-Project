@@ -2,14 +2,16 @@
 class Enemy {
  PVector pos;
  PVector vel;
+ float spd = random (-2,2);
 float size=30;
  
  Enemy (float x, float y) {
   pos = new PVector(x, y); // Start randomly in the world
-  vel= new PVector();
+  vel= new PVector(spd,spd);
  }
   
  void update (){
+   pos.add(vel); //position will be keep adding by the velocity
  //if positionx lager than the max width it goes back to 0...
   if (pos.x > width) {
     pos.x = 0;
@@ -30,6 +32,5 @@ float size=30;
    fill (0);
    noStroke ();
    ellipse (pos.x, pos.y, size,size);
- 
  }
 }
