@@ -7,7 +7,7 @@ ArrayList<Bush> bushes; // List of bushes as obstacles
 
 
 void setup(){
- size(600,400);
+ size(400,400);
   ply = new Player(width / 2, height / 2);//Player stay in the middle
  ene = new ArrayList<Enemy>(); // Initialize enermies
  bushes = new ArrayList<Bush>(); // Initialize bushes
@@ -80,7 +80,9 @@ void keyPressed(){
    gameOver = false;
  //reset enermies
  ene.clear();
-  
+   for (int i = 0; i < 3; i++) {
+  ene.add(new Enemy(random(width), random(height)));
+ }
  }
   
 }
