@@ -2,7 +2,7 @@ int points = 0;
 boolean gameOver = false; 
 
 Player ply;  
-Candy candy; 
+ArrayList <Candy> candy; 
 ArrayList<Enemy> ene; // List to store multiple enermies
 ArrayList<Bush> bushes; // List of bushes as obstacles
 
@@ -12,7 +12,7 @@ void setup(){
   ply = new Player(width / 2, height / 2);//Player stay in the middle
  ene = new ArrayList<Enemy>(); // Initialize enermies
  bushes = new ArrayList<Bush>(); // Initialize bushes
- candy = new Candy ( width/2, height/2);
+ candy = new ArrayList <Candy>();
   // Create random bushes, 10 bushes at a time and loop when get out of the frame
   for (int i = 0; i < 10; i++) {
     bushes.add(new Bush(random(width), random(height)));
@@ -59,7 +59,10 @@ void draw(){
 
 void mousePressed (){
   //constraint like did in the christmast tree, but the obect will move
-     candy.display();
+       for (int i = candy.size() - 1; i >= 0; i--) {
+      Candy c = candy.get(i);
+      c.display();
+       }
   }
   
 void GameOver () {

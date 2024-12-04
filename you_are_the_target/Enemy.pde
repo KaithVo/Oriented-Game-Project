@@ -3,7 +3,7 @@ class Enemy {
  PVector pos;
  PVector vel;
 
-float size=30;
+float size= 40;
  
  Enemy (float x, float y) {
   pos = new PVector(x, y); // Start randomly in the world
