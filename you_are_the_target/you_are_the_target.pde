@@ -24,7 +24,6 @@ void setup(){
 }
 void draw(){
   if (gameOver){
- 
     GameOver();
   }else {
  background (200); 
@@ -67,8 +66,21 @@ background(50);
   textSize(50);
   textAlign(CENTER, CENTER);
   text("Game Over!", width / 2, height / 2);
-
   textSize(25);
   fill(255);
   text("Final Score: " + points, width / 2, height / 2 + 50);
+  textSize(16);
+  text("Press 'R' to Restart", width / 2, height / 2 + 70); // Restart hint
+    
+}
+
+
+void keyPressed(){
+ if (key == 'r') {
+   gameOver = false;
+ //reset enermies
+ ene.clear();
+  
+ }
+  
 }
