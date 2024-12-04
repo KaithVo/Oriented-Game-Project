@@ -33,6 +33,7 @@ void draw(){
  //The target box will be random each round
    // Update and display the player
     ply.update();
+    ply.display();
     //calling the cllide and get affect right at the 1 enermy got touched
     ply.collide(ene.get(0));
 
@@ -49,21 +50,28 @@ void draw(){
     }
       // if add can affect the vector inside it... I add the Vector of player velocity inher
      // so bushes movement will have to depends on it
-     ply.display();
+    
   fill(0);
     textSize(20);
     text("Score: " + points, 50, 30);
 }
-
+//candy have no limit
+    for (int i = candy.size() - 1; i >= 0; i--) {
+      Candy c = candy.get(i);
+      c.update(); 
+      c.display();
+      c.hit(ene.get (0));
+       }
 }
 
 void mousePressed (){
-  //constraint like did in the christmast tree, but the obect will move
-       for (int i = candy.size() - 1; i >= 0; i--) {
-      Candy c = candy.get(i);
-      c.display();
-       }
+  if(!gameOver){ //if the game over is true, stop throwing the candy
+  // Candy (float x, float y, float targetX, float targetY){ first 2 indicates the root  and last 2 indicates where it goes, which is mouseX, mouseY
+  Candy c = new Candy(ply.CHARposition.x, ply.CHARposition.y, mouseX, mouseY);
+  candy.add(c);
   }
+  
+}
   
 void GameOver () {
 

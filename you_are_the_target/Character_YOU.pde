@@ -37,7 +37,7 @@ class Player {
   void collide (Enemy e){
     //check the x& y postion of the player, and x&y postion of the enrmy 
     //to see if it's around the Character size
-    if (dist (CHARposition.x, CHARposition.y, e.pos.x, e.pos.y) < size/2 + e.size/2){
+    if (dist (CHARposition.x, CHARposition.y, e.pos.x, e.pos.y) <=size/2 + e.size){
      gameOver=true; 
     }
 }
