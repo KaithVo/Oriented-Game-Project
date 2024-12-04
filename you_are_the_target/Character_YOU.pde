@@ -27,6 +27,7 @@ class Player {
       }
     }
   }
+  //Remember to decorateted it for aestheic!
   void display() {
     fill(50, 100, 200);
     ellipse(CHARposition.x, CHARposition.y, size, size); // Always draw at the center

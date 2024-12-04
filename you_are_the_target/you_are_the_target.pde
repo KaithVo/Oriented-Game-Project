@@ -2,14 +2,14 @@ int points = 0;
 boolean gameOver = false; 
 
 Player ply;  
-//ArrayList<Subject> subs; // List to store multiple subject
+ArrayList<Enemy> ene; // List to store multiple enermies
 ArrayList<Bush> bushes; // List of bushes as obstacles
 
 
 void setup(){
  size(600,400);
   ply = new Player(width / 2, height / 2);//Player stay in the middle
- //subs = new ArrayList<Subject>(); // Initialize subject
+ ene = new ArrayList<Enemy>(); // Initialize enermies
  bushes = new ArrayList<Bush>(); // Initialize bushes
   // Create random bushes, 10 bushes at a time and loop when get out of the frame
   for (int i = 0; i < 10; i++) {
@@ -17,9 +17,9 @@ void setup(){
   }
   
    // Spawn three subjects
- // for (int i = 0; i < 3; i++) {
-   // subs.add(new Subject());
-//  }
+ for (int i = 0; i < 3; i++) {
+  ene.add(new Enemy(random(width), random(height)));
+ }
 
 }
 void draw(){
@@ -29,11 +29,11 @@ void draw(){
     ply.update();
 
 
-    // Update and display the SUBS
-  //  for (Subject sub : subs) {
-  //    sub.update();
-  //    sub.display();
-    //}
+     //Update and display the enermies
+ for (Enemy e : ene) {
+   e.update();
+   e.display();
+}
 
         // Draw and update all bushes
     for (Bush b : bushes) {
