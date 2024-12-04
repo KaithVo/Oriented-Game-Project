@@ -1,4 +1,4 @@
-Character player; //player
+Player ply;  
 ArrayList<Subject> subs; // List to store multiple subject
 ArrayList<Bush> bushes; // List of bushes as obstacles
 int points=0; 
@@ -7,7 +7,7 @@ boolean gameOver = false;
 
 void setup(){
  size(600,400);
- player = new Character (); 
+  ply = new Player(width / 2, height / 2);
  subs = new ArrayList<Subject>(); // Initialize subject
  bushes = new ArrayList<Bush>(); // Initialize bushes
  
@@ -26,8 +26,8 @@ void draw(){
  background (200); 
  //The target box will be random each round
    // Update and display the player
-    player.update();
-    player.display();
+    ply.update();
+    ply.display();
 
     // Update and display the SUBS
     for (Subject sub : subs) {
@@ -38,6 +38,7 @@ void draw(){
         // Draw and update all bushes
     for (Bush b : bushes) {
       b.display();
+      b.move ();
     }
 
 
