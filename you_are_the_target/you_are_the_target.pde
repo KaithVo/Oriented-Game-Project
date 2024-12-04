@@ -12,7 +12,7 @@ void setup(){
 
  
  bushes = new ArrayList<Bush>(); // Initialize bushes
-  // Create random bushes
+  // Create random bushes, 10 bushes at a time and loop when get out of the frame
   for (int i = 0; i < 10; i++) {
     bushes.add(new Bush(random(width), random(height)));
   }
