@@ -31,7 +31,8 @@ void draw(){
  //The target box will be random each round
    // Update and display the player
     ply.update();
-
+    //calling the cllide and get affect right at the 1 enermy got touched
+    ply.collide(ene.get(0));
 
      //Update and display the enermies
  for (Enemy e : ene) {
@@ -62,7 +63,7 @@ void mousePressed (){
 void GameOver () {
 
 background(50);
-  fill(255, 0, 0,100);
+  fill(255, 0, 0,200);
   textSize(50);
   textAlign(CENTER, CENTER);
   text("Game Over!", width / 2, height / 2);
