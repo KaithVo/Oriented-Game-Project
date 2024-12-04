@@ -32,4 +32,13 @@ class Player {
     fill(50, 100, 200);
     ellipse(CHARposition.x, CHARposition.y, size, size); // Always draw at the center
   }
+  // call enemy class in here
+  //can't believe that I type it right in the first time...
+  void collide (Enemy e){
+    //check the x& y postion of the player, and x&y postion of the enrmy to see if it's less than 50 pixel
+    if (dist (CHARposition.x, CHARposition.y, e.pos.x, e.pos.y) <= 50){
+     gameOver=true; 
+    }
+}
+
 }
