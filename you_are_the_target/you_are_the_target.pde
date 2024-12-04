@@ -1,16 +1,15 @@
+int points = 0; 
+boolean gameOver = false; 
+
 Player ply;  
 //ArrayList<Subject> subs; // List to store multiple subject
 ArrayList<Bush> bushes; // List of bushes as obstacles
-int points=0; 
-boolean gameOver = false; 
 
 
 void setup(){
  size(600,400);
-  ply = new Player(width / 2, height / 2);
+  ply = new Player(width / 2, height / 2);//Player stay in the middle
  //subs = new ArrayList<Subject>(); // Initialize subject
-
- 
  bushes = new ArrayList<Bush>(); // Initialize bushes
   // Create random bushes, 10 bushes at a time and loop when get out of the frame
   for (int i = 0; i < 10; i++) {
@@ -27,23 +26,25 @@ void draw(){
  background (200); 
  //The target box will be random each round
    // Update and display the player
+    ply.update();
 
-    ply.display();
 
     // Update and display the SUBS
   //  for (Subject sub : subs) {
   //    sub.update();
   //    sub.display();
     //}
-    
+
         // Draw and update all bushes
     for (Bush b : bushes) {
+      b.move(ply.velocity); //player moves based on the player's velocityyyyyyyy
       b.display();
-      b.move ();
     }
+      // if add can affect the vector inside it... I add the Vector of player velocity inher
+     // so bushes movement will have to depends on it
+     ply.display();
+     
 
-
-rect (width/2, height/2, 100,100);
   fill(0);
     textSize(20);
     text("Score: " + points, 50, 30);

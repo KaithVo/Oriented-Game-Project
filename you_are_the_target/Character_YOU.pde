@@ -1,11 +1,12 @@
 class Player {
   PVector CHARposition;
   PVector velocity;
-  float speed= 4;
-  float size=40;
+  float speed = 4;
+  float size = 40;
 
   Player(float x, float y) {
     CHARposition = new PVector (x, y);
+    velocity = new PVector (0,0);
   }
 
   void update () {//not position because position doesn't change, only the velocity which will affect the speed

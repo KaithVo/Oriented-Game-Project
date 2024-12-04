@@ -1,7 +1,5 @@
 class Bush {
   PVector position; // Position of the bush
- PVector velocity;
-  float speed= 4;
   float size = 50; // Size of the bush
 
   Bush(float x, float y) {
@@ -13,24 +11,28 @@ class Bush {
     fill(34, 139, 34);
     rect(position.x, position.y, size, size);
   }
-  //off set to wrap around the player
-  
-void move () {
-  if (keyPressed) {
-      if (key == 'w') {
-        velocity.y = speed;
-      }
-     if (key == 's'){
-        velocity.y = -speed;
-      }
-      if (key == 'a') {
-        velocity.x = speed;
-      }
-      if (key == 'd'){
-        velocity.x = -speed;
-      }
+  //off set to wrap around the SCREEN
+
+void move (PVector playerVelo) {
+    // Instead of using sub(), manually update the position
+    position.x -= playerVelo.x; // Move bush opposite to player's horizontal movement
+    position.y -= playerVelo.y; // Move bush opposite to player's vertical movement
+
+  //if positionx lager than the max width it goes back to 0...
+  if (position.x > width) {
+    position.x = 0;
+  }
+    //if positionx lower than 0 it goes to the max wdith...
+    if (position.x < 0) {
+    position.x = width;
+  }
+  //do the same with the height
+    if (position.y > height) {
+      position.y = 0;
     }
-  
+    if (position.y < 0) {
+      position.y = height;
+
 }
-  
+}
 }
