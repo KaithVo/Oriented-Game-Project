@@ -1,6 +1,6 @@
 class Bush {
   PVector position; // Position of the bush
-  float size = 50; // Size of the bush
+  float size = 60; // Size of the bush
 
   Bush(float x, float y) {
     position = new PVector(x, y); // Set the position of the bush
@@ -9,7 +9,10 @@ class Bush {
     // Display the bush
   void display() {
     fill(34, 139, 34);
-    rect(position.x, position.y, size, size);
+    noStroke ();
+    ellipse(position.x, position.y, size, size);
+    ellipse(position.x-10, position.y-10, size, size);
+    ellipse(position.x+10, position.y-5, size, size);
   }
   //off set to wrap around the SCREEN
 
