@@ -20,6 +20,7 @@ class Candy {
   }
   
   void display(){
+    noStroke();
     //Pink color
 fill (247,190,226);
 ellipse(position.x, position.y, size,size);
@@ -39,8 +40,10 @@ ellipse(position.x, position.y, size,size);
   
   }
   
-  void hit (Enemy e) { // like collide in player class
+  void hits (Enemy e) { // like collide in player class
    if (dist (position.x, position.y, e.pos.x, e.pos.y) < size/2 + e.size/2){
+     points +=1;
+     
      println ("Trick or TREATTTT!!"); 
     }
   }

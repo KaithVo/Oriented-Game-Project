@@ -28,7 +28,7 @@ void draw(){
   if (gameOver){
     GameOver();
   }else {
- background (200); 
+ background (68,74,98); 
 
  //The target box will be random each round
    // Update and display the player
@@ -62,6 +62,9 @@ void draw(){
       c.display();
       c.hit(ene.get (0));
        }
+ //counting point by checking the collision on enemies
+ //using loops but different letter since it will confused, since diso
+       
 }
 
 void mousePressed (){

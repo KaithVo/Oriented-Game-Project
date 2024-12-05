@@ -29,10 +29,13 @@ float size= 40;
  }
  }
  void display () {
-   fill (0);
+   noStroke();
+   fill (140);
    ellipse (pos.x, pos.y, size,size);
-   
-   
+rect (pos.x-20, pos.y, size, size);
+fill(20);
+ellipse( pos.x-10, pos.y, 10, 15);
+ellipse( pos.x+10, pos.y, 10, 15);
  }
 
 }

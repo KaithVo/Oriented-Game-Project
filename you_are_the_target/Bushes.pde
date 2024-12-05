@@ -8,7 +8,7 @@ class Bush {
   
     // Display the bush
   void display() {
-    fill(34, 139, 34);
+    fill(46,70,41);
     noStroke ();
     ellipse(position.x, position.y, size, size);
     ellipse(position.x-10, position.y-10, size, size);

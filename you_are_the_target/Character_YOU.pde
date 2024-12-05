@@ -29,7 +29,8 @@ class Player {
   }
   //Remember to decorateted it for aestheic!
   void display() {
-    fill(50, 100, 200);
+    fill(142,47,91);
+    stroke (255);
     ellipse(CHARposition.x, CHARposition.y, size, size); // Always draw at the center
   }
   // call enemy class in here
@@ -37,7 +38,7 @@ class Player {
   void collide (Enemy e){
     //check the x& y postion of the player, and x&y postion of the enrmy 
     //to see if it's around the Character size
-    if (dist (CHARposition.x, CHARposition.y, e.pos.x, e.pos.y) <=size/2 + e.size){
+    if (dist (CHARposition.x, CHARposition.y, e.pos.x, e.pos.y) < size *1.7){
      gameOver=true; 
     }
 }
