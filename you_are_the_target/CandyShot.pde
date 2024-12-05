@@ -39,12 +39,19 @@ ellipse(position.x, position.y, size,size);
            position.x + size, position.y + size / 2); // Right wrapper bottom
   
   }
-  
+  //what if I call the whole thing in here?
   void hits (Enemy e) { // like collide in player class
-   if (dist (position.x, position.y, e.pos.x, e.pos.y) < size/2 + e.size/2){
-     points +=1;
-     
-     println ("Trick or TREATTTT!!"); 
+  //loop so that the enermies will get off the screen completely after get defeated
+
+      if (dist(position.x, position.y, e.pos.x, e.pos.y) < size / 2 + e.size / 2) {
+        // Enemy hit by candy, remove enemy and increase score
+    
+        points += 1; // Increase score by 10 for each enemy hit
+      // Stop checking after the first enemy hit
+       println ("Trick or TREATTTT!!");   
     }
+      
+ 
+    
   }
 }

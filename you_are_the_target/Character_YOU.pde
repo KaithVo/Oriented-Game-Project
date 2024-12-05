@@ -3,6 +3,7 @@ class Player {
   PVector velocity;
   float speed = 4;
   float size = 40;
+  float lightRadius = 100; // Radius of the light effect
 
   Player(float x, float y) {
     CHARposition = new PVector (x, y);
@@ -29,7 +30,8 @@ class Player {
   }
   //Remember to decorateted it for aestheic!
   void display() {
-    fill(142,47,91);
+    
+fill(142,47,91);
     stroke (255);
     ellipse(CHARposition.x, CHARposition.y, size, size); // Always draw at the center
   }

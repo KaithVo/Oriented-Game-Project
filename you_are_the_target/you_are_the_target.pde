@@ -18,7 +18,7 @@ void setup(){
     bushes.add(new Bush(random(width), random(height)));
   }
   
-   // Spawn three subjects
+   // Spawn three ghosts
  for (int i = 0; i < 3; i++) {
   ene.add(new Enemy(random(width), random(height)));
  }
@@ -29,6 +29,7 @@ void draw(){
     GameOver();
   }else {
  background (68,74,98); 
+//flashlight
 
  //The target box will be random each round
    // Update and display the player
@@ -38,10 +39,11 @@ void draw(){
     ply.collide(ene.get(0));
 
      //Update and display the enermies
- for (Enemy e : ene) {
-   e.update();
-   e.display();
-}
+    for (int i = ene.size() - 1; i >= 0; i--) {
+      Enemy e = ene.get(i);
+      e.update();
+      e.display();
+    }
 
         // Draw and update all bushes
  for (Bush b : bushes) {
@@ -60,7 +62,7 @@ void draw(){
       Candy c = candy.get(i);
       c.update(); 
       c.display();
-      c.hit(ene.get (0));
+      c.hits(ene.get(i));
        }
  //counting point by checking the collision on enemies
  //using loops but different letter since it will confused, since diso
