@@ -62,7 +62,7 @@ void draw(){
       Candy c = candy.get(i);
       c.update(); 
       c.display();
-      c.hits(ene.get(i));
+      c.hits(ene);
        }
  //counting point by checking the collision on enemies
  //using loops but different letter since it will confused, since diso

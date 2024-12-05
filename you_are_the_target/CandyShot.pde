@@ -40,18 +40,19 @@ ellipse(position.x, position.y, size,size);
   
   }
   //what if I call the whole thing in here?
-  void hits (Enemy e) { // like collide in player class
+  void hits (ArrayList<Enemy>ene) { // like collide in player class
   //loop so that the enermies will get off the screen completely after get defeated
-
+  for (int i = ene.size() - 1; i >= 0; i--) {
+      Enemy e = ene.get(i);
       if (dist(position.x, position.y, e.pos.x, e.pos.y) < size / 2 + e.size / 2) {
         // Enemy hit by candy, remove enemy and increase score
-    
+        ene.remove(i);
         points += 1; // Increase score by 10 for each enemy hit
       // Stop checking after the first enemy hit
        println ("Trick or TREATTTT!!");   
     }
       
  
-    
+    }
   }
 }
